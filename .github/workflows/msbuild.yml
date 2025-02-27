@@ -29,7 +29,7 @@ jobs:
           - configuration: Release
             release-build: true
      
-    continue-on-error : $${{matrix.release-build}} 
+    continue-on-error : ${{matrix.release-build}} 
     runs-on: windows-latest
         
     steps:
