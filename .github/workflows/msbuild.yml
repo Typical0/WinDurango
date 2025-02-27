@@ -24,11 +24,11 @@ jobs:
    continue-on-error: ${{ matrix.release }}
    strategy:
       matrix:
-       configuration: Debug
-       release: [false]
-       include:
-        - configuration: Release
-          release: true
+        configuration: Debug
+        release: [false]
+        include:
+         - configuration: Release
+           release: true
         
     steps:
     - uses: actions/checkout@v4
