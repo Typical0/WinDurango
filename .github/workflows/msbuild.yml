@@ -19,7 +19,7 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  Build:
     strategy:
       fail-fast: true
       matrix:
