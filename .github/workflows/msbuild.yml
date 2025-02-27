@@ -23,7 +23,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        configuration: Debug
+        configuration: [Debug]
         release-build: [false]
         include:
           - configuration: Release
