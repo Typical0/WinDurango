@@ -20,16 +20,16 @@ permissions:
 
 jobs:
   Build:
+    continue-on-error : ${{matrix.continue}} 
     strategy:
       fail-fast: true
       matrix:
         configuration: [Debug]
-        release-build: [false]
+        continue: [false]
         include:
           - configuration: Release
-            release-build: true
+            continue: true
      
-    continue-on-error : ${{matrix.release-build}} 
     runs-on: windows-latest
         
     steps:
