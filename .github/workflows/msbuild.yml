@@ -20,15 +20,12 @@ permissions:
 
 jobs:
   build:
-   runs-on: windows-latest
-   continue-on-error: ${{ matrix.release }}
-   strategy:
+    strategy:
+      fail-fast: false
       matrix:
-        configuration: Debug
-        release: [false]
-        include:
-         - configuration: Release
-           release: true
+        configuration: [Release, Debug]
+
+    runs-on: windows-latest
         
     steps:
     - uses: actions/checkout@v4
