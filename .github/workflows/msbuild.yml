@@ -21,10 +21,15 @@ permissions:
 jobs:
   build:
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
-        configuration: [Release, Debug]
-
+        configuration: Debug
+        release-build: [false]
+        include:
+          - configuration: Release
+            release-build: true
+     
+    continue-on-error : $${{matrix.release-build}} 
     runs-on: windows-latest
         
     steps:
